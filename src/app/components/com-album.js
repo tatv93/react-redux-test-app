@@ -11,10 +11,11 @@ export default class User extends Component {
             <div className="col-sm-6 col-md-4">
                 <div className="thumbnail">
                     <div className="caption">
-                        <h3>{this.props.data.name}</h3>
-                        <p>{this.props.data.email}</p>
+                        <h3>{this.props.data.title}</h3>
                         <p>
-                            <Link to={"users/:id/albums".replace(':id', this.props.data.id)} className="btn btn-primary" role="button">Albums</Link>
+                            <Link to={"/albums/" + this.props.data.id}
+                                  className="btn btn-primary"
+                                  role="button">Photos</Link>
                         </p>
                     </div>
                 </div>

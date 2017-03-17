@@ -19,7 +19,8 @@ module.exports = {
     devServer: {
         port: 3000,
         publicPath: "/",
-        contentBase: "./src"
+        contentBase: "./src",
+        historyApiFallback: true
     },
     devtool: "source-map"
 };
