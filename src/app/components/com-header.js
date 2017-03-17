@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {filterUsers, getUsers} from '../actions/action-user';
 
@@ -16,6 +17,9 @@ class Header extends Component {
         return (
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
+                    <div className="navbar-header">
+                        <Link className="navbar-brand" to="/">Brand</Link>
+                    </div>
                     <form className="navbar-form navbar-left">
                         <div className="form-group">
                             <input type="text" className="form-control" placeholder="Search"
