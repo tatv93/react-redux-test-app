@@ -15,7 +15,6 @@ class AlbumsList extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.userId);
         this.props.getAlbums(this.props.userId);
     }
 
