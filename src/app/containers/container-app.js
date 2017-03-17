@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import UsersList from '../components/com-users-list';
 import Header from '../components/com-header';
 
 export default class App extends Component {
@@ -11,7 +10,7 @@ export default class App extends Component {
         return (
             <div className="container">
                 <Header/>
-                <UsersList/>
+                {this.props.children}
             </div>
         );
     }

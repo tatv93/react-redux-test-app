@@ -8,13 +8,21 @@ export const getTestUser = () => {
     };
 };
 
-export const getUsers = () => {
+export const getUsers = (cb) => {
     return (dispatch) => {
         fetch(api('/users')).then((response) => response.json()).then((json) => {
             dispatch({
                 type: "GET_USERS",
                 payload: json
-            })
+            });
+            typeof cb === 'function' && cb(json);
         });
+    }
+};
+
+export const filterUsers = (text) => {
+    return {
+        type: "FILTER_USERS",
+        payload: text
     }
 };

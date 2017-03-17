@@ -20,5 +20,6 @@ module.exports = {
         port: 3000,
         publicPath: "/",
         contentBase: "./src"
-    }
+    },
+    devtool: "source-map"
 };

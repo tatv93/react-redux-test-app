@@ -9,6 +9,12 @@ const userReducer = (state = [], action) => {
         case "GET_USERS":
             state = action.payload;
             break;
+
+        case "FILTER_USERS":
+            state = state.filter((item) => {
+                return item.name.indexOf(action.payload) > -1;
+            });
+            break;
     }
     return state;
 };
