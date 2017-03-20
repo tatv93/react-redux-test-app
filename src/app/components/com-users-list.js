@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(getTestUser());
         },
         getUsers: () => {
-            getUsers()(dispatch)
+            dispatch(getUsers());
         }
     };
 };
