@@ -5,6 +5,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 import appDataReducer from './reducers/reducer-app-data';
 import userReducer from './reducers/reducer-user';
@@ -13,6 +14,10 @@ import App from './containers/container-app';
 import HomePage from './routes/page-home';
 import AlbumsPage from './routes/page-albums';
 
+const composeEnhancers = composeWithDevTools({
+    // Specify here name, actionsBlacklist, actionsCreators and other options if needed
+});
+
 const store = createStore(
     combineReducers({
         app_data: appDataReducer,
@@ -20,7 +25,7 @@ const store = createStore(
         albums: albumReducer
     }),
     {},
-    applyMiddleware(thunk, createLogger())
+    composeEnhancers(applyMiddleware(thunk, createLogger()))
 );
 
 ReactDOM.render(
